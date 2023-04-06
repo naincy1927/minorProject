@@ -1,0 +1,79 @@
+
+{%load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex items-center justify-center">
+        <div class="flex-col items-center justify-center text-gray-800 text-center">
+            <div class="flex items-center justify-center">
+                <div class="h-36 w-[90%] flex items-center justify-center md:text-4xl text-2xl lg:text-5xl font-bold ">We are up for adoption</div>
+            </div>
+    
+            <div class="flex">
+    
+            <div class="flex md:flex-row flex-col p-4 space-x-4 space-y-2 max-w-7xl justify-around w-full h-auto lg:h-60 items-center ">
+                <div class=" w-[70%] md:w-1/2 bg-gray-200 py-10 rounded-2xl flex items-center justify-center ml-4">
+                        <div class="flex-col  items-center px-0 md:px-6">
+                            <div class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400  bg-clip-text text-transparent">60%</div>
+                            <div class="text-md mt-8 font-bold text-gray-800">60% of the dogs are vaccinated by us</div>
+                            <div class="text-xs font-medium text-gray-800"></div>
+                    </div>
+                </div>
+                <div class=" w-[70%] md:w-1/2 bg-gray-200 py-10 rounded-2xl flex items-center justify-center ml-4">
+                        <div class="flex-col  items-center px-0 md:px-6">
+                            <div class="text-5xl font-bold bg-gradient-to-l from-fuchsia-500 to-orange-500  bg-clip-text text-transparent">15+</div>
+                            <div class="text-md mt-8 font-bold text-gray-800">15+ dogs are adopted last month</div>
+
+                    </div>
+                </div>
+                
+                </div>
+                
+            </div>
+            </div>
+    
+        </div>
+        <script src="https://cdn.tailwindcss.com"></script> 
+
+    {% for i in contex  %}
+
+    <div class="flex items-center justify-center h-screen">
+        <div class="flex flex-col md:flex-row w-[70%] items-center space-y-4">
+
+       
+        <div class="flex-col space-y-4 text-center md:w-1/2 w-[80%]">
+            <div class="text-fuchsia-600 text-xl font-medium">Animal Category : {{i.a_type}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium">Age : {{i.a_age}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium"> Gender : {{i.a_gender}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium">Color : {{i.a_color}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium">Breed : {{i.a_bread}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium">Location : {{i.a_address}}</div>
+            <div class="text-fuchsia-600 text-xl font-medium">vaccinated: {{i.vaccinated}}</div>
+        
+            <div class="text-gray-500">I need a home ..will you adopt me?</div>
+            <div class="flex items-center justify-center">
+                <div class="bg-fuchsia-600 px-4 py-1 text-white font-medium rounded-lg  hover:scale-105 cursor-pointer"><a href ="{%url 'userDetails' %}">Adopt</a></div>
+
+            </div>
+        </div>
+        <div class="md:w-96 w-[70%] md:h-96 h-48  bg-gray-200 rounded-xl overflow-hidden">
+            <img  src={{i.a_img.url}} alt="" class="" />
+
+        </div>
+    </div>
+    </div>
+
+    {% endfor %}
+
+<script src="https://cdn.tailwindcss.com"></script> 
+</body>
+</html>
